@@ -23,7 +23,17 @@ spring:
     port: 6379
 ```
 
-3. 설정완료되었고, 세션에 애트리뷰트 등록하면 redis로 기록된다.
+3. @EnableRedisHttpSession 어노테이션을 설정파일에 추가하여 redis session을 활성화한다.
+
+```
+@Configuration
+@EnableRedisHttpSession
+public class SessionConfig {
+
+}
+```
+
+4. 설정완료되었고, 세션에 애트리뷰트 등록하면 redis로 기록된다.
 
 ```
 @RestController("/")
